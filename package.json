@@ -1,7 +1,7 @@
 {
-  "name": "covid-dashboard",
+  "name": "rs-board",
   "version": "1.0.0",
-  "description": "covid",
+  "description": "Kanban board",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -12,20 +12,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/roadToTheFuture/covid-dashboard"
+    "url": "git+https://github.com/roadToTheFuture/RSboard"
   },
   "keywords": [
-    "dashboard",
-    "covid",
+    "Board",
+    "Rolling Scopes School",
+    "App",
     "2020"
   ],
-  "author": "Ilya Safyan <js.learn.safyan@gmail.com> | Nikolay Nazimkov <nazimkoff@gmail.com>",
+  "author": "Ilya Safyan <js.learn.safyan@gmail.com> | Nikolay Nazimkov <nazimkoff@gmail.com> | Gleb Pobezhimov <pglb@yandex.ru>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/roadToTheFuture/covid-dashboard/issues"
-  },
   "browserslist": "> 0.25%, not dead",
-  "homepage": "https://github.com/roadToTheFuture/covid-dashboard#readme",
+  "homepage": "https://github.com/roadToTheFuture/RSboard#readme",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
