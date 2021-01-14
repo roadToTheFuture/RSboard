@@ -1,10 +1,9 @@
 import createDomElement from '@js/utils/createDomElement.js';
-import { textPlaceholder, textButtonAddColumn } from '@js/constants/constants.js';
+import { textButtonAddColumn } from '@js/constants/constants.js';
 
 import { Column } from '@js/components/board/classes/column.js';
 import { content } from '../wrapper/wrapper';
 
-console.log(textPlaceholder);
 class CreateFieldColumn {
   constructor(textPlaceholder) {
     this.textPlaceholder = textPlaceholder;
