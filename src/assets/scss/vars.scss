@@ -1,3 +1,11 @@
+@mixin mainTitle {
+    font-style: "Lato";
+    font-weight: 700;
+    font-size: 36px;
+    color: $mainTitleFontColor;
+    padding-left: 70px;
+}
+
 $mainFont: "Montserrat", Helvetica, Arial, sans-serif;
 
 $bgcolor: #f1f1f2;
@@ -11,3 +19,9 @@ $graph: #ffccbb;
 $hover: #bcbabe;
 $countriesList: #f8f8f8;
 $countryInfo: #f8f8f8;
+
+$sideBarColor: rgb(141, 170, 226);
+$menuColor: rgb(255, 255, 255);
+$primaryColor: #ffff;
+$boardBackgroundColor: #F5F7FA;
+$mainTitleFontColor: #4786FF;

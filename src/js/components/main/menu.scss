@@ -1,0 +1,85 @@
+@import '/assets/scss/vars.scss';
+
+* {
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    margin: 0px 0px 0px 0px;
+}
+  
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+  
+aside {
+    display: flex;
+    position: relative;
+    height: 100%;
+    background: blue;    
+}
+  
+.title {
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    background: $sideBarColor;
+    border: none;
+    z-index: 555;
+    align-items: center;
+    text-align: center;
+    
+    .burger-ico{
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 36px;
+        color: $primaryColor;
+        cursor: pointer;
+    }
+}
+  
+.nav {
+    position: relative;
+    width: 250px;
+    border: none;
+    background: $menuColor;
+    transition: all 1s;
+    z-index: 0;
+    
+}
+  
+.active {
+    margin-left: -250px;
+}
+  
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 1000px;
+    height:100%;
+    background: $primaryColor;
+    // border: none;
+    .header {
+        @include mainTitle;
+        display: flex;
+        width: 100%;
+        height: 70px;
+        background: $primaryColor;
+        align-items: center;
+        text-align: center;        
+    } 
+    
+    .board-wrapper {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        min-height: 400px;
+        background: $boardBackgroundColor;
+        // border: 5px solid pink;    
+    }
+}
+
+
+
