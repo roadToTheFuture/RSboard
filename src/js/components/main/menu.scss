@@ -84,14 +84,38 @@ aside {
     transition: all 1s;
     z-index: 0;
     margin-left: -250px;
+    background-color: $navBackgroundColor;
 
     &.active {
         margin-left: 0px;
     }
-    
-}
-  
 
+    &_title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 140px;
+
+        &__logo {
+            @include mainTitle;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;            
+            height: 40px;
+            width: 40px;
+            background-color: $mainTitleFontColor;
+            color: $primaryColor;
+            box-shadow: 2px 2px 5px 0px $primaryColor;
+        }
+        
+        &__content {
+            @include mainTitle;
+            display: flex;
+            text-align: bottom;            
+        }
+    }   
+}
   
 .main-wrapper {
     display: flex;
@@ -100,9 +124,10 @@ aside {
     min-width: 1000px;
     height:100%;
     background: $primaryColor;
-    // border: none;
+    
     .header {
         @include mainTitle;
+        padding-left: 70px;
         display: flex;
         width: 100%;
         height: 70px;
@@ -112,13 +137,43 @@ aside {
     } 
     
     .board-wrapper {
-        display: flex;
+        display: flex;        
         width: 100%;
         height: 100%;
         min-height: 400px;
         background: $boardBackgroundColor;
-        // border: 5px solid pink;    
-    }
+
+        .board_title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 75px;             
+            margin-left: 40px;
+            max-height: 40px;
+    
+            &__logo {
+                @include mainTitle;
+                display: flex;               
+                align-items: center;
+                justify-content: center;
+                border-radius: 5px;            
+                height: 40px;
+                width: 40px;
+                background-color: $mainTitleFontColor;
+                color: $primaryColor;
+                box-shadow: 2px 2px 5px 0px $primaryColor;
+            }
+            
+            &__content {
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-size: 24px;
+                color: black;
+                display: flex;                
+            }
+        }   
+    }    
 }
 
 
