@@ -44,6 +44,10 @@ aside {
             box-shadow: 2px 2px 5px 0px $boardBackgroundColor;
         }
 
+        &.active:hover span {
+            box-shadow: 2px 2px 5px 0px $closeMenuLogo;
+        }
+
         span {
             transition: all 0.5s;
             height: 3px;
@@ -56,7 +60,7 @@ aside {
         &.active span:nth-child(1) {
             transform: translate(6px, -1px) rotate(45deg);
             transform-origin: left top;
-            background-color: rgb(240, 240, 240);
+            background-color: $closeMenuLogo;            
         }
 
         &.active span:nth-child(2) {
@@ -67,7 +71,7 @@ aside {
         &.active span:nth-child(3) {
             transform: translate(-3px, -20px) rotate(-45deg);
             transform-origin: right bottom;
-            background-color: rgb(240, 240, 240);
+            background-color: $closeMenuLogo;            
         }
     }
 }
