@@ -5,9 +5,10 @@ import createDomElement from '@js/utils/createDomElement.js';
 function menu() {
     const slide = document.querySelector('.nav');
     slide.classList.toggle('active');
+    burger.classList.toggle('active');
 }
 
-const burgerIco = document.querySelector('.burger-ico');
+const burger = document.querySelector('.burger');
     
-burgerIco.addEventListener('click', menu)
+burger.addEventListener('click', menu)
   
