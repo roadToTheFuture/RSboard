@@ -133,7 +133,28 @@ aside {
         height: 70px;
         background: $primaryColor;
         align-items: center;
-        text-align: center;        
+        text-align: center;
+        justify-content: space-between;
+        
+        &_clock {
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &__time {
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;                
+                font-size: 24px;
+            }
+
+            &__date {
+                font-size: 16px;
+                color: black;
+            }
+        }
     } 
     
     .board-wrapper {
