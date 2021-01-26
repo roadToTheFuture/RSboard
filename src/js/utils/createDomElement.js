@@ -1,4 +1,4 @@
-export function createDomElement(tag, classNames, child, parent, ...dataAttr) {
+export default function createDomElement(tag, classNames, child, parent, ...dataAttr) {
   let element = null;
 
   try {
