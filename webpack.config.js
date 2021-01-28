@@ -35,6 +35,7 @@ module.exports = {
     alias: {
       '@': path.resolve('src'),
       '@js': path.resolve('src/js'),
+      '@images': path.resolve('src/assets/img'),
     },
   },
   plugins: [
@@ -87,6 +88,19 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(?:|gif|png|jpg|svg|jpeg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: './',
+              useRelativePath: true,
+            },
           },
         ],
       },
