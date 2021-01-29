@@ -97,6 +97,18 @@ form.sign-in-form {
   }
 }
 
+.recovery {
+  cursor: pointer;
+  color: #fd7036;
+  font-size: 0.9rem;
+}
+
+.sent {
+  cursor: pointer;
+  color: #16c258;
+  font-size: 0.9rem;
+}
+
 .mui-btn {
   width: 150px;
   background-color: #5995fd;
