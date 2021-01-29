@@ -35,6 +35,16 @@
   pointer-events: all;
 }
 
+@media (max-width: 1366px) {
+  .content {
+    padding-top: 0;
+  }
+  .image {
+    width: 70%;
+    padding-bottom: 250px;
+  }
+}
+
 @media (max-width: 870px) {
   .container {
     min-height: 800px;
@@ -83,6 +93,7 @@
     padding-right: 15%;
     transition: transform 0.9s ease-in-out;
     transition-delay: 0.8s;
+    padding-top: 0;
   }
 
   .panel h3 {
