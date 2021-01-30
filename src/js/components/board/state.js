@@ -6,5 +6,3 @@ const state = {};
 
 export default state;
 
-//const user = firebase.auth().currentUser;
-//console.log(user.uid);
