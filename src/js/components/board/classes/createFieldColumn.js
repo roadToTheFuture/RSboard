@@ -4,9 +4,12 @@ import { textButtonAddColumn } from '@js/constants/constants.js';
 import { Column } from '@js/components/board/classes/column.js';
 import { content } from '../wrapper/wrapper';
 
+import state from '@js/components/board/state.js';
+
 class CreateFieldColumn {
-  constructor(textPlaceholder) {
+  constructor(textPlaceholder, state) {
     this.textPlaceholder = textPlaceholder;
+    this.state = state;
   }
 
   render() {
@@ -25,11 +28,16 @@ class CreateFieldColumn {
       if (nameColumn !== '') {
         const newColumn = new Column(nameColumn);
         newColumn.render();
+
+        state[`${nameColumn}`] = nameColumn;
+        state[`${nameColumn}`] = {};
+        
       } else {
         alert('Please enter column name!');
       }
       inputField.value = '';
       inputField.placeholder = this.textPlaceholder;
+      
     });
   }
 }
