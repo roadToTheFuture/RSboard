@@ -5,4 +5,3 @@ import 'firebase/database';
 const state = {};
 
 export default state;
-

@@ -1,0 +1,237 @@
+@import "/assets/scss/vars.scss";
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+aside {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  background: #8daae2;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100px;
+  background: $sideBarColor;
+  border: none;
+  z-index: 555;
+  align-items: center;
+  text-align: center;
+
+  .burger {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+
+    span {
+      position: absolute;
+      width: 100%;
+      height: 6px;
+      left: 0;
+      top: 12px;
+      background-color: white;
+      transition: all 0.3s;
+    }
+  }
+
+  .burger::before,
+  .burger::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    height: 5px;
+    left: 0;
+    transition: all 0.3s;
+  }
+
+  .burger::before {
+    top: 0;
+  }
+
+  .burger::after {
+    bottom: 0;
+  }
+
+  .burger.active {
+    &::before {
+      transform: rotate(45deg);
+      top: 12px;
+      height: 6px;
+      background-color: #fd7036;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      bottom: 12px;
+      height: 6px;
+      background-color: #fd7036;
+    }
+
+    span {
+      transform: scale(0);
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: none;
+      border: $boardBackgroundColor 2px solid;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+
+    .question {
+      @include mainTitle;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: none;
+      border: $boardBackgroundColor 2px solid;
+      color: $boardBackgroundColor;
+      font-size: 12px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.nav {
+  position: relative;
+  width: 250px;
+  border: none;
+  background: $menuColor;
+  transition: all 0.4s;
+  z-index: 0;
+  margin-left: -250px;
+  background-color: $navBackgroundColor;
+
+  &.active {
+    margin-left: 0px;
+  }
+
+  &_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 140px;
+
+    &__logo {
+      @include mainTitle;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      height: 40px;
+      width: 40px;
+      background-color: $mainTitleFontColor;
+      color: $primaryColor;
+      box-shadow: 2px 2px 5px 0px $primaryColor;
+    }
+
+    &__content {
+      @include mainTitle;
+      display: flex;
+      text-align: bottom;
+    }
+  }
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: $primaryColor;
+
+  .header {
+    @include mainTitle;
+    padding-left: 70px;
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background: $primaryColor;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+
+    &_clock {
+      margin-right: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__time {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        font-size: 24px;
+      }
+
+      &__date {
+        font-size: 16px;
+        color: black;
+      }
+    }
+  }
+
+  .board-wrapper {
+    border: 20px solid black;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    background: $boardBackgroundColor;
+
+    .board_title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-top: 75px;
+      margin-left: 40px;
+      max-height: 40px;
+
+      &__logo {
+        @include mainTitle;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        height: 40px;
+        width: 40px;
+        background-color: $mainTitleFontColor;
+        color: $primaryColor;
+        box-shadow: 2px 2px 5px 0px $primaryColor;
+      }
+
+      &__content {
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        color: black;
+        display: flex;
+      }
+    }
+  }
+}
