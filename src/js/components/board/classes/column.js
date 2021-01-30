@@ -15,19 +15,27 @@ class Column {
     const columnHeader = createDomElement('div', 'column__header', '', listWrapper);
     const columnText = createDomElement('p', 'column__text', `${this.nameColumn}`, columnHeader);
     const cardWrapper = createDomElement('div', 'column__card-wrapper', '', listWrapper);
+    const cards = document.querySelectorAll('.column__card');
 
-    cardWrapper.ondragover = allowDrop;
-    function allowDrop(event) {
+    const dragover = function (event) {
       event.preventDefault();
-    }
-
-    cardWrapper.ondrop = drop;
-    function drop(event) {
-      const itemId = event.dataTransfer.getData('id');
-      console.log(itemId);
-      event.target.append(document.getElementById(itemId));
-    }
-
+    };
+    const dragenter = function () {
+      cardWrapper.classList.add('column__card-wrapper--hovered');
+    };
+    const dragleave = function () {
+      cardWrapper.classList.remove('column__card-wrapper--hovered');
+    };
+    const dragdrop = function (event) {
+      const id = event.dataTransfer.getData('text');
+      const dragabbleElement = document.getElementById(id);
+      this.append(dragabbleElement);
+      cardWrapper.classList.remove('column__card-wrapper--hovered');
+    };
+    cardWrapper.addEventListener('dragover', dragover);
+    cardWrapper.addEventListener('dragenter', dragenter);
+    cardWrapper.addEventListener('dragleave', dragleave);
+    cardWrapper.addEventListener('drop', dragdrop);
     const newFieldCreateCard = new CreateFieldCard(textPlaceholderCard, cardWrapper, listWrapper);
     newFieldCreateCard.render();
   }
