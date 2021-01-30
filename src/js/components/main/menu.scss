@@ -23,6 +23,7 @@ aside {
 .title {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 70px;
     background: $sideBarColor;
     border: none;
@@ -74,6 +75,38 @@ aside {
             background-color: $closeMenuLogo;            
         }
     }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: none;
+            border: $boardBackgroundColor 2px solid; 
+            overflow: hidden;
+            margin-bottom: 15px;        
+        }
+        
+        .question {
+            @include mainTitle;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: none;
+            border: $boardBackgroundColor 2px solid;
+            color: $boardBackgroundColor; 
+            font-size: 12px; 
+            margin-bottom: 30px;              
+        }
+    }    
 }
   
 .nav {
