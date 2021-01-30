@@ -10,7 +10,12 @@ class Card {
 
   render() {
     const card = createDomElement('div', 'column__card', '', this.elem);
+    card.id = 'column__card';
     card.draggable = 'true';
+    card.ondragStart = drag;
+    function drag (event) {
+      event.dataTransfer.setData('id', event.target.id);
+    }
 
     const textarea = createDomElement('textarea', 'column__card__textarea', '', card);
     textarea.placeholder = this.defaultText;
