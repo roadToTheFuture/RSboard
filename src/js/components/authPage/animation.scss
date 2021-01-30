@@ -35,13 +35,53 @@
   pointer-events: all;
 }
 
+@media (max-width: 2000px) {
+  .content {
+    padding-top: 0;
+  }
+  .image {
+    width: 65%;
+  }
+
+  .panel h3 {
+    font-size: 3rem;
+  }
+
+  .panel p {
+    font-size: 1.4rem;
+    padding: 0.5rem 0;
+  }
+
+  .btn.transparent {
+    width: 150px;
+    height: 49px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+}
+
 @media (max-width: 1366px) {
   .content {
     padding-top: 0;
   }
   .image {
-    width: 70%;
-    padding-bottom: 250px;
+    width: 60%;
+  }
+
+  .panel h3 {
+    font-size: 2rem;
+  }
+
+  .panel p {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .btn.transparent {
+    width: 150px;
+    height: 49px;
+    font-size: 0.8rem;
+    font-weight: 500;
   }
 }
 
@@ -93,21 +133,21 @@
     padding-right: 15%;
     transition: transform 0.9s ease-in-out;
     transition-delay: 0.8s;
-    padding-top: 0;
+    padding-top: 150px;
   }
 
   .panel h3 {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
 
   .panel p {
-    font-size: 0.7rem;
+    font-size: 1rem;
     padding: 0.5rem 0;
   }
 
   .btn.transparent {
-    width: 110px;
-    height: 35px;
+    width: 140px;
+    height: 50px;
     font-size: 0.7rem;
   }
 
@@ -116,7 +156,7 @@
     height: 2500px;
     transform: translateX(-50%);
     left: 30%;
-    bottom: 68%;
+    bottom: 50%;
     right: initial;
     top: initial;
     transition: 2s ease-in-out;
@@ -130,7 +170,7 @@
 
   .container.sign-up-mode .left-panel .image,
   .container.sign-up-mode .left-panel .content {
-    transform: translateY(-300px);
+    transform: translateY(-400px);
   }
 
   .container.sign-up-mode .right-panel .image,
@@ -165,12 +205,12 @@
   }
 
   .container:before {
-    bottom: 72%;
+    bottom: 60%;
     left: 50%;
   }
 
   .container.sign-up-mode:before {
-    bottom: 28%;
+    bottom: 35%;
     left: 50%;
   }
 }

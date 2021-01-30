@@ -10,13 +10,6 @@ function initApp() {
     if (user) {
       // User is signed in
       const { uid } = user;
-      const { email } = user;
-      const { emailVerified } = user;
-      const { isAnonymous } = user;
-      const { providerData } = user;
-      const { userName } = user;
-
-      const userInfo = JSON.stringify(user, null, '  ');
       console.log('User is sign In');
       console.log(uid);
     } else {

@@ -186,6 +186,14 @@ form.sign-in-form {
   transition-delay: 0.4s;
 }
 
+.firstImg {
+  content: url("@/assets/img/first.svg");
+}
+
+.secondImg {
+  content: url("@/assets/img/second.svg");
+}
+
 .panel {
   display: flex;
   flex-direction: column;

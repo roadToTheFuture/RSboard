@@ -37,7 +37,7 @@ module.exports = {
       '@': path.resolve('src'),
       '@js': path.resolve('src/js'),
       '@images': path.resolve('src/assets/img'),
-      'img': path.join(__dirname, 'src', 'assets'),
+      img: path.join(__dirname, 'src', 'assets'),
     },
   },
   plugins: [
@@ -101,7 +101,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: './src',
+              outputPath: './src/assets/img/',
               useRelativePath: true,
             },
           },
