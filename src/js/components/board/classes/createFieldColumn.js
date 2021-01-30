@@ -3,7 +3,6 @@ import { textButtonAddColumn } from '@js/constants/constants.js';
 
 import { Column } from '@js/components/board/classes/column.js';
 import { content } from '../wrapper/wrapper';
-
 import state from '@js/components/board/state.js';
 
 class CreateFieldColumn {

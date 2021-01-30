@@ -2,9 +2,14 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 
-//const state = {};
+const state = {};
 
-//export default state;
+firebase.auth().onAuthStateChanged(function(user) {
+  console.log(user.uid)
+  console.log(user)
+  state.userId = user.uid;
+})
 
-const user = firebase.auth().currentUser;
-console.log(user.uid);
+console.log(state);
+
+export default state;
