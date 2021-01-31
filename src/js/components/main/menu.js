@@ -1,5 +1,3 @@
-import './menu.scss';
-
 function menu() {
   const slide = document.querySelector('.nav');
   slide.classList.toggle('active');
