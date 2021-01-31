@@ -24,4 +24,4 @@ function initApp() {
   document.getElementById('resetPass').addEventListener('click', sendPasswordReset, false);
 }
 
-window.onload = () => initApp();
+// window.onload = () => initApp();
