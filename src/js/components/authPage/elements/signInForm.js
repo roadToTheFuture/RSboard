@@ -21,7 +21,7 @@ export default function addSignInForm(signInUpForms) {
   createDomElement('label', '', 'Password', muiLibraryPass);
 
   // const signInLink = createDomElement('a', 'mui-btn mui-btn--raised mui-btn--primary sign-in-btn', 'SIGN IN', signInForm, 'href', '/#/app');
-  const signInBtn = createDomElement('a', 'mui-btn mui-btn--raised mui-btn--primary sign-in-btn', 'SIGN IN', signInForm, 'href', '/#/app');
+  const signInBtn = createDomElement('button', 'mui-btn mui-btn--raised mui-btn--primary sign-in-btn', 'SIGN IN', signInForm, 'type', 'submit');
 
   const ressetPassword = createDomElement('p', 'recovery', 'password recovery', signInForm, 'id', 'resetPass');
 
