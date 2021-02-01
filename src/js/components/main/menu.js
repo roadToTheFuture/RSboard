@@ -1,12 +1,14 @@
-function menu() {
-  const slide = document.querySelector('.nav');
-  slide.classList.toggle('active');
-  burger.classList.toggle('active');
+function burgerLogic() {
+  function menu() {
+    const slide = document.querySelector('.nav');
+    slide.classList.toggle('active');
+    burger.classList.toggle('active');
+  }
+
+  const burger = document.querySelector('.burger');
+
+  burger.addEventListener('click', menu);
 }
-
-const burger = document.querySelector('.burger');
-
-burger.addEventListener('click', menu);
 
 function showTime() {
   const today = new Date();
@@ -37,5 +39,10 @@ function showDate() {
   setTimeout(showDate, 1000);
 }
 
-showTime();
-showDate();
+export default function mainPageLogic(){
+  burgerLogic();
+  showTime();
+  showDate();
+}
+
+// mainPageLogic()

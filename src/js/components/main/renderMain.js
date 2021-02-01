@@ -1,7 +1,7 @@
 import createDomElement from '@js/utils/createDomElement.js';
 import './menu.scss';
 
-function renderMain() {
+export default function renderMain() {
   const aSide = createDomElement('aside', '', '', document.body);
 
   const title = createDomElement('div', 'title', '', aSide);
@@ -29,4 +29,4 @@ function renderMain() {
   const boardWrapper = createDomElement('div', 'board-wrapper', '', mainWrapper);
 }
 
-renderMain();
+// renderMain();

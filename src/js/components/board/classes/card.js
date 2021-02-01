@@ -21,6 +21,7 @@ class Card {
     const dragend = function () {
       card.style.display = 'flex';
     }
+    
     card.addEventListener('dragstart', dragstart); 
     card.addEventListener('dragend', dragend); 
   
@@ -38,9 +39,8 @@ class Card {
     });
    
     const buttonWrapper = createDomElement('div', 'column__card__button-wrapper', '', card);
-    const buttonCardDelete = createDomElement('img', 'column__card__button', '', card);
-    buttonCardDelete.src = 'https://user-images.githubusercontent.com/61156194/104500143-b310e500-55e6-11eb-900c-2c23db449231.png';
-
+    const buttonCardDelete = createDomElement('i', 'far fa-trash-alt column__card__button', '', card);
+   
     buttonCardDelete.addEventListener('click', () => {
       card.remove();
     });
