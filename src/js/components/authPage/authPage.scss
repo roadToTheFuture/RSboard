@@ -54,7 +54,8 @@ form.sign-in-form {
   z-index: 2;
 }
 
-.title {
+.titleUp,
+.titleIn {
   font-size: 2.2rem;
   font-weight: 800;
   color: #444;
@@ -213,7 +214,7 @@ form.sign-in-form {
   padding: 3rem 12% 2rem 17%;
 }
 
-.panel .content {
+.panel .form_content {
   color: #fff;
   transition: transform 0.9s ease-in-out;
   transition-delay: 0.6s;
@@ -244,6 +245,6 @@ form.sign-in-form {
 }
 
 .right-panel .image,
-.right-panel .content {
+.right-panel .form_content {
   transform: translateX(800px);
 }

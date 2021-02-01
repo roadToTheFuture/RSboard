@@ -1,7 +1,4 @@
 import createDomElement from '@js/utils/createDomElement.js';
-import './wrapper.scss';
-import './title.scss';
-import './content.scss';
 
 export default function renderBoard() {
   const main = document.querySelector('.board-wrapper');

@@ -4,7 +4,7 @@ import toggleSignIn from './signIn';
 import handleSignUp from './signUp';
 import sendPasswordReset from './resetPass';
 
-function initApp() {
+export default function initApp() {
   // Listening for auth state changes.
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -23,5 +23,3 @@ function initApp() {
   document.getElementById('signUpBtn').addEventListener('click', handleSignUp, false);
   document.getElementById('resetPass').addEventListener('click', sendPasswordReset, false);
 }
-
-// window.onload = () => initApp();

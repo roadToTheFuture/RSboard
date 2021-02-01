@@ -1,21 +1,20 @@
 import createDomElement from '@js/utils/createDomElement.js';
-import './menu.scss';
 
 export default function renderMain() {
   const aSide = createDomElement('aside', '', '', document.body);
 
-  const title = createDomElement('div', 'title', '', aSide);
+  const title = createDomElement('div', 'menu-title', '', aSide);
   const burger = createDomElement('div', 'burger', '', title);
   createDomElement('span', '', '', burger);
 
-  const container = createDomElement('div', 'container', '', title);
+  const container = createDomElement('div', 'avatar__container', '', title);
   createDomElement('div', 'avatar', '', container);
   createDomElement('div', 'question', '?', container);
 
   const nav = createDomElement('nav', 'nav', '', aSide);
   const navTittle = createDomElement('div', 'nav_title', '', nav);
   createDomElement('span', 'nav_title__logo', 'D', navTittle);
-  createDomElement('span', 'nav_title__content', 'esks', navTittle);
+  createDomElement('span', 'nav_title__content', 'desks', navTittle);
   
   const mainWrapper = createDomElement('section', 'main-wrapper', '', document.body);
 
@@ -28,5 +27,3 @@ export default function renderMain() {
 
   const boardWrapper = createDomElement('div', 'board-wrapper', '', mainWrapper);
 }
-
-// renderMain();
