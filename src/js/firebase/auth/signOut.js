@@ -1,7 +1,5 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import preloaderRender from '@js/components/preloader/preloader.js';
-import delay from '@js/utils/delay.js';
 import renderWithAuthCheck from '@js/authLogic/renderWithAuthCheck.js';
 
 function userGoOut() {

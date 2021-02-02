@@ -1,5 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import errorPassword from '@js/authLogic/errorPassword.js';
+import errorEmail from '@js/authLogic/errorEmail.js';
 
 export default function toggleSignIn() {
   const user = firebase.auth().currentUser;
@@ -12,12 +14,12 @@ export default function toggleSignIn() {
     const passwordValue = password.value;
 
     if (emailValue.length < 4) {
-      console.log('Please enter an email address.');
+      errorEmail();
       return;
     }
 
     if (passwordValue.length < 4) {
-      alert('Please enter a password.');
+      errorPassword('length');
       return;
     }
     // Sign in with email and pass.
@@ -28,11 +30,11 @@ export default function toggleSignIn() {
         const errorCode = error.code;
         const errorMessage = error.message;
         if (errorCode === 'auth/wrong-password') {
-          alert('Wrong password.');
+          errorPassword('error');
         } else {
-          alert(errorMessage);
+          errorPassword();
+          console.log(errorMessage);
         }
-        console.log(error);
         document.getElementById('signInBtn').disabled = false;
       });
   }
