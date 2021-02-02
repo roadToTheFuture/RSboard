@@ -2,20 +2,19 @@ import createDomElement from '@js/utils/createDomElement.js';
 import './themeToggle.scss';
 
 function renderToggle() {
-  const themeToggle = createDomElement('div', 'themeToggle', '', body.main-wrapper.header);
+  createDomElement('div', 'header_toggle', '', header);
 
-  const checkbox = createDomElement('checkbox', 'checkbox', '', themeToggle);
-  const label = createDomElement('label', 'label', '', themeToggle);
+  const checkbox = createDomElement('input', 'checkbox', '', div.header_toggle, 'type', 'checkbox');
+
+  createDomElement('label', 'label', '', header_toggle, 'for', 'chk');
   
-  const fasFaMoon = createDomElement('i', 'fas fa-moon', '', label);
-  const fasFaSun = createDomElement('i', 'fas fa-sun', '', label);
+  createDomElement('i', 'fas fa-moon', '', label);
+  createDomElement('i', 'fas fa-sun', '', label);
  
 }
 
-renderMain();
+renderToggle()
 
-const chk = document.getElementById('chk');
-
-chk.addEventListener('change', () => {
-	document.body.classList.toggle('dark');
-});
+// checkbox.addEventListener('change', () => {
+// 	document.body.classList.toggle('dark');
+// });
