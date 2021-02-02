@@ -11,7 +11,6 @@ export default function renderToggle() {
 
   createDomElement('i', 'fas fa-moon', '', label);
   createDomElement('i', 'fas fa-sun', '', label);
- 
 }
 
 // checkbox.addEventListener('change', () => {
