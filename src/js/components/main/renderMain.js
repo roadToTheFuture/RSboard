@@ -1,6 +1,5 @@
 import createDomElement from '@js/utils/createDomElement.js';
 import './menu.scss';
-import renderToggle from '@js/components/main/themeToggle.js';
 
 function renderMain() {
   const aSide = createDomElement('aside', '', '', document.body);
@@ -16,9 +15,10 @@ function renderMain() {
   const mainWrapper = createDomElement('section', 'main-wrapper', '', document.body);
 
   const header = createDomElement('section', 'header', '', mainWrapper);
-  createDomElement('div', 'header_title', 'RSboard', header);
+  createDomElement('div', 'header_title', 'RSboard', header);  
 
-  const clock = createDomElement('div', 'header_clock', '', header);
+  const clockWrapper = createDomElement('div', 'clock_wrapper', '', header);
+  const clock = createDomElement('div', 'header_clock', '', clockWrapper);
   createDomElement('time', 'header_clock__time', '', clock, 'id', 'time');
   createDomElement('time', 'header_clock__date', '', clock, 'id', 'date');
 
@@ -26,4 +26,3 @@ function renderMain() {
 }
 
 renderMain();
-renderToggle();
