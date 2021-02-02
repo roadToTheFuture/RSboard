@@ -2,7 +2,8 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 export default function toggleSignIn() {
-  if (firebase.auth().currentUser) {
+  const user = firebase.auth().currentUser;
+  if (user) {
     firebase.auth().signOut();
   } else {
     const email = document.getElementById('signInEmail');
@@ -21,7 +22,7 @@ export default function toggleSignIn() {
     }
     // Sign in with email and pass.
     firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
-      .then((response) => console.log(response) )
+      .then((response) => console.log(response))
       .catch((error) => {
       // Handle Errors here.
         const errorCode = error.code;
@@ -34,8 +35,6 @@ export default function toggleSignIn() {
         console.log(error);
         document.getElementById('signInBtn').disabled = false;
       });
-
-    window.location.href = '#/app';
   }
   document.getElementById('signInBtn').disabled = true;
 }

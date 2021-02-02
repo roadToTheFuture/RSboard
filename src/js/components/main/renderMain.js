@@ -1,3 +1,4 @@
+import signOut from '@js/firebase/auth/signOut.js';
 import createDomElement from '@js/utils/createDomElement.js';
 
 export default function renderMain() {
@@ -15,6 +16,10 @@ export default function renderMain() {
   const navTittle = createDomElement('div', 'nav_title', '', nav);
   createDomElement('span', 'nav_title__logo', 'D', navTittle);
   createDomElement('span', 'nav_title__content', 'desks', navTittle);
+  createDomElement('div', 'nav_boards', '', nav);
+  const info = createDomElement('div', 'nav_info', '', nav);
+  createDomElement('p', 'info__mail', 'mail', info);
+  createDomElement('button', 'info__btn', 'sign out', info, 'id', 'signOutBtn');
   
   const mainWrapper = createDomElement('section', 'main-wrapper', '', document.body);
 
@@ -26,4 +31,5 @@ export default function renderMain() {
   createDomElement('time', 'header_clock__date', '', clock, 'id', 'date');
 
   const boardWrapper = createDomElement('div', 'board-wrapper', '', mainWrapper);
+  signOut();
 }

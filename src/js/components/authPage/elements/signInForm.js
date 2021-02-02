@@ -4,7 +4,7 @@ export default function addSignInForm(signInUpForms) {
   const signInForm = createDomElement('form', 'sign-in-form', '', signInUpForms, 'action', '');
   createDomElement('h2', 'titleIn', 'Sign in', signInForm);
 
-  const inputEmailContainer = createDomElement('div', 'input-field', '', signInForm);
+  const inputEmailContainer = createDomElement('div', 'input-field', '', signInForm, 'id', 'passwordError');
   createDomElement('i', 'fas fa-user', '', inputEmailContainer);
 
   const muiLibraryEmail = createDomElement('div', 'mui-textfield mui-textfield--float-label', '', inputEmailContainer);

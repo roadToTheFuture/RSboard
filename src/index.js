@@ -2,7 +2,7 @@ import '@js';
 import '@/assets/scss/reset.scss';
 import './assets/mui/js/mui.min.js';
 import '@/assets/scss/ui.scss';
-
+import '@js/components/preloader/preloader.scss';
 import '@js/components/main/menu.scss';
 
 import '@js/components/board/wrapper/wrapper.scss';

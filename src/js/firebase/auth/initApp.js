@@ -4,6 +4,7 @@ import toggleSignIn from './signIn';
 import handleSignUp from './signUp';
 import sendPasswordReset from './resetPass';
 
+
 export default function initApp() {
   // Listening for auth state changes.
   firebase.auth().onAuthStateChanged((user) => {
@@ -19,7 +20,15 @@ export default function initApp() {
     document.getElementById('signInBtn').disabled = false;
   });
 
+  function addUrl() {
+    firebase.auth().onAuthStateChanged((info) => {
+      if (!info) return;
+      window.location.href = `#/app/${info.uid}`;
+    });
+  }
+
   document.getElementById('signInBtn').addEventListener('click', toggleSignIn, false);
+  document.getElementById('signInBtn').addEventListener('click', addUrl, false);
   document.getElementById('signUpBtn').addEventListener('click', handleSignUp, false);
   document.getElementById('resetPass').addEventListener('click', sendPasswordReset, false);
 }
