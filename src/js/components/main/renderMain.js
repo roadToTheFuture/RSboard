@@ -31,9 +31,8 @@ export default function renderMain() {
 
   const header = createDomElement('section', 'header', '', mainWrapper);
   createDomElement('div', 'header_title', 'RSboard', header);
-  createDomElement('div', 'div.board-wrapper', '', header);
-  darkModeToggleRender();
-
+  // darkModeToggleRender();
+  
   const clock = createDomElement('div', 'header_clock', '', header);
   createDomElement('time', 'header_clock__time', '', clock, 'id', 'time');
   createDomElement('time', 'header_clock__date', '', clock, 'id', 'date');
