@@ -31,22 +31,19 @@ function addZero(n) {
 function showDate() {
   const today = new Date();
   const day = today.getDay();
-  const dat = today.getDate();
-  const mon = today.getMonth();
+  const month = today.getMonth();
+  const year = today.getFullYear();
 
-  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const monthes = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septeember', 'October', 'Noember', 'December'];
+  date.innerHTML = `${addZero(day)}<span>.</span>${addZero(month + 1)}<span>.</span>${year}`;
 
-  date.innerHTML = `${days[day]}<span>, </span>${dat}<span>th </span>${monthes[mon]}`;
-
-  setTimeout(showDate, 1000);
+  setTimeout(showDate, 20000);
 }
 
 function getEmail() {
   firebase.auth().onAuthStateChanged((user) =>{
     const email = document.querySelector('.info__mail');
     email.innerText = `${user.email}`;
-  })
+  });
 }
 
 export default function mainPageLogic(){

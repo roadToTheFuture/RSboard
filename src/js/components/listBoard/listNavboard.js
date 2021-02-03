@@ -15,7 +15,6 @@ class ListNavBoard {
 
     buttonAdd.addEventListener('click', () => {
       const newBoard = new NavBoard(textDefaultBoard, document.querySelector('.nav_boards'));
-      refInfo('boards', )
       newBoard.render();
 
     });

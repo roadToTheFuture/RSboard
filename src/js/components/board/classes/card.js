@@ -14,7 +14,10 @@ class Card {
 
   render() {
     const card = createDomElement('div', 'column__card', '', this.elem);
-  
+    const textarea = createDomElement('textarea', 'column__card__textarea', '', card);
+    textarea.placeholder = this.defaultText;
+    textarea.focus();
+    card.id = this.defaultText;
     card.draggable = 'true';
     const dragstart = function (event) {
       setTimeout(() =>{
@@ -25,41 +28,37 @@ class Card {
     const dragend = function () {
       card.style.display = 'flex';
     }
-    
     card.addEventListener('dragstart', dragstart); 
     card.addEventListener('dragend', dragend); 
-  
-    const textarea = createDomElement('textarea', 'column__card__textarea', '', card);
-    textarea.placeholder = this.defaultText;
-
-    textarea.addEventListener('change', () =>{
+    textarea.addEventListener('blur', () =>{
      const key = (((card.parentNode).parentNode).querySelector('.column__text')).textContent;
      state[`${key}`].[`${textarea.value}`] = textarea.value;
-     card.id = textarea.value;
+     if (textarea.value === '') {
+      card.id = this.defaultText;
+     } else {
+      card.id = textarea.value;
+     }
      textarea.readOnly = 'true';
      textarea.classList.add('column__card__textarea--hover');
-     textarea.style.backgroundColor = '#dee5f3';
   
-      console.log(this.elem);
      refInfo('cards' ,{title: textarea.value});
-     
+
     });
-   
+
     const buttonWrapper = createDomElement('div', 'column__card__button-wrapper', '', card);
-    const buttonCardDelete = createDomElement('i', 'far fa-trash-alt column__card__button', '', card);
+
+    const buttonCardEdit = createDomElement('i', 'far fa-edit i-edit', '', buttonWrapper);
+    const buttonCardDelete = createDomElement('i', 'far fa-trash-alt i-delete', '', buttonWrapper);
    
     buttonCardDelete.addEventListener('click', () => {
       card.remove();
     });
-
-    const buttonCardEdit = createDomElement('img', 'column__card__button', '', card);
-    buttonCardEdit.src = 'https://user-images.githubusercontent.com/61156194/106360848-80275a80-6323-11eb-9ef7-e3fa7337a5ac.png';
-
+    
+    
     buttonCardEdit.addEventListener('click', () => {
       textarea.removeAttribute('readOnly');
       textarea.classList.remove('column__card__textarea--hover');
     });
-
     buttonWrapper.append(buttonCardDelete,buttonCardEdit);
   }
 }

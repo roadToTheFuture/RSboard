@@ -4,7 +4,6 @@ import darkModeToggleRender from '@js/components/darkModeToggle/darkModeToggleRe
 import { ListNavBoard } from '@js/components/listBoard/ListNavBoard.js';
 import { textBoardButton} from '@js/constants/constants.js';
 
-
 export default function renderMain() {
   const aSide = createDomElement('aside', '', '', document.body);
 
@@ -32,8 +31,9 @@ export default function renderMain() {
 
   const header = createDomElement('section', 'header', '', mainWrapper);
   createDomElement('div', 'header_title', 'RSboard', header);
-  // darkModeToggleRender();
-  
+  createDomElement('div', 'div.board-wrapper', '', header);
+  darkModeToggleRender();
+
   const clock = createDomElement('div', 'header_clock', '', header);
   createDomElement('time', 'header_clock__time', '', clock, 'id', 'time');
   createDomElement('time', 'header_clock__date', '', clock, 'id', 'date');
