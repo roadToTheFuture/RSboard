@@ -11,4 +11,4 @@ import '@js/components/board/wrapper/content.scss';
 
 import '@js/components/authPage/authPage.scss';
 import '@js/components/authPage/animation.scss';
-
+import '@js/components/darkModeToggle/darkModeToggle.scss';
