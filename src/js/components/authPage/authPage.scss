@@ -125,16 +125,19 @@ form.sign-in-form {
   transition: 0.5s;
 }
 
+#sign-in-btn,
+#sign-up-btn {
+  font-weight: 600;
+}
+
 .social-text {
-  padding: 0.7rem 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 300;
+  margin-bottom: 7px;
 }
 
 .social-media {
   display: flex;
-  justify-content: center;
-  margin-top: 5px;
 }
 
 .social-icon {
@@ -153,8 +156,8 @@ form.sign-in-form {
 }
 
 .social-icon:hover {
-  color: #fd7036;
-  border-color: #fd7036;
+  color: #2473fb;
+  border-color: #2473fb;
 }
 
 .panels-container {
@@ -247,4 +250,23 @@ form.sign-in-form {
 .right-panel .image,
 .right-panel .form_content {
   transform: translateX(800px);
+}
+
+.errorMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 210px;
+  position: absolute;
+  top: 0px;
+  margin-left: 2%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 1rem;
+  border: 2px solid #fd7036;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
 }

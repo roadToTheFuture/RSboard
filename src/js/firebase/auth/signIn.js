@@ -1,7 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import errorPassword from '@js/authLogic/errorPassword.js';
-import errorEmail from '@js/authLogic/errorEmail.js';
+import errorLogic from '@js/authLogic/errorLogic.js';
 
 export default function toggleSignIn() {
   const user = firebase.auth().currentUser;
@@ -14,12 +13,12 @@ export default function toggleSignIn() {
     const passwordValue = password.value;
 
     if (emailValue.length < 4) {
-      errorEmail();
+      errorLogic('emailLength', 'Email must have more than 4 characters.    Please try again.', '.sign-in-form');
       return;
     }
 
     if (passwordValue.length < 4) {
-      errorPassword('length');
+      errorLogic('length', 'Your password must contain more than 4 characters. Please try again.', '.sign-in-form');
       return;
     }
     // Sign in with email and pass.
@@ -30,10 +29,9 @@ export default function toggleSignIn() {
         const errorCode = error.code;
         const errorMessage = error.message;
         if (errorCode === 'auth/wrong-password') {
-          errorPassword('error');
+          errorLogic('error', 'Incorrect password.      Please try again.', '.sign-in-form');
         } else {
-          errorPassword();
-          console.log(errorMessage);
+          errorLogic('other', "There's been a mistake.   Please try again.", '.sign-in-form');
         }
         document.getElementById('signInBtn').disabled = false;
       });

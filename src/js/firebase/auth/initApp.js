@@ -24,11 +24,13 @@ export default function initApp() {
     firebase.auth().onAuthStateChanged((info) => {
       if (!info) return;
       window.location.href = `#/app/${info.uid}`;
+      console.log('work')
     });
   }
 
   document.getElementById('signInBtn').addEventListener('click', toggleSignIn, false);
   document.getElementById('signInBtn').addEventListener('click', addUrl, false);
   document.getElementById('signUpBtn').addEventListener('click', handleSignUp, false);
+  document.getElementById('signUpBtn').addEventListener('click', addUrl, false);
   document.getElementById('resetPass').addEventListener('click', sendPasswordReset, false);
 }
