@@ -190,10 +190,6 @@
 }
 
 @media (max-width: 570px) {
-  form {
-    padding: 0 1.5rem;
-  }
-
   .image {
     display: none;
   }
@@ -212,5 +208,23 @@
   .container.sign-up-mode:before {
     bottom: 35%;
     left: 50%;
+  }
+  .signin-signup .sign-up-form {
+    padding: 60px;
+  }
+
+  .signin-signup .sign-in-form {
+    .errorMessage {
+      top: 125px;
+    }
+  }
+
+  .titleUp {
+    margin-bottom: 0px;
+  }
+
+  #signUpBtn {
+    margin-top: 0;
+    margin-bottom: 5px;
   }
 }

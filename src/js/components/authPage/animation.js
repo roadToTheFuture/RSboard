@@ -9,12 +9,16 @@ export default function animationBtnInForm() {
   const inputValuePasswordUp = document.querySelector('#signUpPassword');
   const inputValueEmailUp = document.querySelector('#signUpEmail');
   const inputUser = document.querySelector('#userName');
+  const userLabelUp = document.querySelector('.userLabelUp');
+  const emailLabelUp = document.querySelector('.emailLabelUp');
+  const emailLabelIn = document.querySelector('.emailLabelIn');
 
   inputUser.addEventListener('click', () => {
     inputUser.style.color = '#333';
     if (inputUser.classList.contains('error')) {
       inputUser.classList.remove('error');
       inputUser.value = '';
+      userLabelUp.innerText = 'User name';
     }
   });
 
@@ -26,14 +30,7 @@ export default function animationBtnInForm() {
     }
   });
 
-  inputValueEmail.addEventListener('click', () => {
-    inputValueEmail.style.color = '#333';
-    if (inputValueEmail.classList.contains('error')) {
-      inputValueEmail.classList.remove('error');
-      inputValueEmail.value = '';
-    }
-  });
-
+ 
   inputValuePasswordUp.addEventListener('click', () => {
     inputValuePasswordUp.style.color = '#333';
     if (inputValuePasswordUp.classList.contains('error')) {
@@ -42,11 +39,21 @@ export default function animationBtnInForm() {
     }
   });
 
+  inputValueEmail.addEventListener('click', () => {
+    inputValueEmail.style.color = '#333';
+    if (inputValueEmail.classList.contains('error')) {
+      inputValueEmail.classList.remove('error');
+      inputValueEmail.value = '';
+      emailLabelIn.innerText = 'Email';
+    }
+  });
+
   inputValueEmailUp.addEventListener('click', () => {
     inputValueEmailUp.style.color = '#333';
     if (inputValueEmailUp.classList.contains('error')) {
       inputValueEmailUp.classList.remove('error');
       inputValueEmailUp.value = '';
+      emailLabelUp.innerText = 'Email';
     }
   });
 

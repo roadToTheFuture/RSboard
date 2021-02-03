@@ -36,7 +36,7 @@ input {
 form {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: column;
   padding: 0rem 5rem;
   transition: all 0.2s 0.7s;
@@ -48,6 +48,7 @@ form {
 form.sign-up-form {
   opacity: 0;
   z-index: 1;
+  padding-top: 80px;
 }
 
 form.sign-in-form {
@@ -258,7 +259,7 @@ form.sign-in-form {
   align-items: center;
   width: 210px;
   position: absolute;
-  top: 0px;
+  top: 0;
   margin-left: 2%;
   text-align: center;
   padding-top: 10px;
@@ -269,4 +270,10 @@ form.sign-in-form {
   border: 2px solid #fd7036;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
+}
+
+.sign-in-form {
+  .errorMessage {
+    top: 100px;
+  }
 }

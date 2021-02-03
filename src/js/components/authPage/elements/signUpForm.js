@@ -10,7 +10,7 @@ export default function addSignUpForm(signInUpForms) {
   const muiLibraryUsername = createDomElement('div', 'mui-textfield mui-textfield--float-label', '', inputNameContainer);
 
   const inputUsername = createDomElement('input', '', '', muiLibraryUsername, 'type', 'text');
-  createDomElement('label', '', 'User name', muiLibraryUsername);
+  createDomElement('label', 'userLabelUp', 'User name', muiLibraryUsername);
 
   const inputEmailContainer = createDomElement('div', 'input-field', '', signUpForm);
   createDomElement('i', 'fas fa-envelope', '', inputEmailContainer);
@@ -18,7 +18,7 @@ export default function addSignUpForm(signInUpForms) {
   const muiLibraryEmail = createDomElement('div', 'mui-textfield mui-textfield--float-label', '', inputEmailContainer);
 
   const inputEmail = createDomElement('input', '', '', muiLibraryEmail, 'type', 'email');
-  createDomElement('label', '', 'Email', muiLibraryEmail);
+  createDomElement('label', 'emailLabelUp', 'Email', muiLibraryEmail);
 
   const inputPasswordContainer = createDomElement('div', 'input-field', '', signUpForm);
   createDomElement('i', 'fas fa-lock', '', inputPasswordContainer);
@@ -26,7 +26,7 @@ export default function addSignUpForm(signInUpForms) {
   const muiLibraryPass = createDomElement('div', 'mui-textfield mui-textfield--float-label', '', inputPasswordContainer);
 
   const inputPassword = createDomElement('input', '', '', muiLibraryPass, 'type', 'password');
-  createDomElement('label', '', 'Password', muiLibraryPass);
+  createDomElement('label', 'passwordUp', 'Password', muiLibraryPass);
 
   const signUpBtn = createDomElement('button', 'mui-btn mui-btn--raised mui-btn--primary sign-in-btn', 'SIGN UP', signUpForm, 'type', 'submit');
 
