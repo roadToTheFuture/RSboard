@@ -6,26 +6,23 @@ export default function githubUp() {
   const provider = new firebase.auth.GithubAuthProvider();
 
   const moreInfoAboutUser = provider.addScope('');
-  console.log(moreInfoAboutUser);
-
   firebase.auth()
     .signInWithPopup(provider)
     .then((result) => {
       const database = firebase.database();
-      const { credential } = result;пш
+      const { credential } = result;
 
       // This gives you a Google Access Token. You can use it to access the Google API.
       const token = credential.accessToken;
       // The signed-in user info.
       const { user } = result;
-      console.log(user);
 
       const addNewUserInDatabase = database.ref(`users/${user.uid}`);
 
       addNewUserInDatabase.set({
         id: user.uid,
         email: user.email,
-        name: 'Ваше Имя',
+        name: user.displayName,
       });
 
       window.location.href = `#/app/${user.uid}`;
