@@ -2,10 +2,12 @@ import createDomElement from '@js/utils/createDomElement.js';
 import './themeToggle.scss';
 
 export default function renderToggle() {
-  const header = document.querySelector('.header');
-   
+  const header = document.querySelector('div.board-wrapper');
+  console.log(header);
+  
   const headerToggle =createDomElement('div', 'header_toggle', '', header);
-  createDomElement('input', 'checkbox', '', headerToggle, 'type', 'checkbox', 'id', 'chk');
+  const checkbox = createDomElement('input', 'checkbox', '', headerToggle, 'id', 'chk');
+  checkbox.setAttribute('type', 'checkbox');
 
   const label = createDomElement('label', 'label', '', headerToggle, 'for', 'chk');
 
@@ -15,6 +17,8 @@ export default function renderToggle() {
 }
 
 renderToggle();
+
+// для смены бекграунда
 
 // checkbox.addEventListener('change', () => {
 // 	document.body.classList.toggle('dark');
