@@ -12,7 +12,7 @@ export default function githubUp() {
     .signInWithPopup(provider)
     .then((result) => {
       const database = firebase.database();
-      const { credential } = result;
+      const { credential } = result;пш
 
       // This gives you a Google Access Token. You can use it to access the Google API.
       const token = credential.accessToken;
