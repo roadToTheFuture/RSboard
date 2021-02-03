@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = !isProduction;
@@ -35,6 +36,8 @@ module.exports = {
     alias: {
       '@': path.resolve('src'),
       '@js': path.resolve('src/js'),
+      '@images': path.resolve('src/assets/img'),
+      img: path.join(__dirname, 'src', 'assets'),
     },
   },
   plugins: [
@@ -46,6 +49,7 @@ module.exports = {
         collapseWhitespace: isProduction,
       },
     }),
+    new HtmlWebpackInlineSVGPlugin(),
     new CopyPlugin({
       patterns: [
         {
@@ -87,6 +91,19 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(?:|gif|png|jpg|svg|jpeg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: './',
+              useRelativePath: true,
+            },
           },
         ],
       },
