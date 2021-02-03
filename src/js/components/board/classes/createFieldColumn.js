@@ -2,6 +2,7 @@ import createDomElement from '@js/utils/createDomElement.js';
 import { textButtonAddColumn } from '@js/constants/constants.js';
 import { Column } from '@js/components/board/classes/column.js';
 import state from '@js/components/board/state.js';
+import refInfo from '@js/database/refInfo.js';
 
 class CreateFieldColumn {
   constructor(textPlaceholder, state) {
@@ -21,6 +22,8 @@ class CreateFieldColumn {
 
     buttonAddColumn.addEventListener('click', () => {
       const nameColumn = inputField.value;
+
+      refInfo('boards', {title: nameColumn});
 
       if (nameColumn !== '') {
         const newColumn = new Column(nameColumn);

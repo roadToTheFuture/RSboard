@@ -1,5 +1,9 @@
 import createDomElement from '@js/utils/createDomElement.js';
 import state from '@js/components/board/state.js';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+import refInfo from '@js/database/refInfo.js';
 
 class Card {
   constructor(defaultText, elem, state) {
@@ -32,10 +36,13 @@ class Card {
      const key = (((card.parentNode).parentNode).querySelector('.column__text')).textContent;
      state[`${key}`].[`${textarea.value}`] = textarea.value;
      card.id = textarea.value;
-     console.log(state);
      textarea.readOnly = 'true';
      textarea.classList.add('column__card__textarea--hover');
      textarea.style.backgroundColor = '#dee5f3';
+  
+      console.log(this.elem);
+     refInfo('cards' ,{title: textarea.value});
+     
     });
    
     const buttonWrapper = createDomElement('div', 'column__card__button-wrapper', '', card);
