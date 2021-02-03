@@ -1,6 +1,7 @@
 import createDomElement from '@js/utils/createDomElement.js';
 import { textDefaultBoard } from '@js/constants/constants.js';
 import { NavBoard } from './NavBoard';
+import refInfo from '@js/database/refInfo.js';
 
 class ListNavBoard {
   constructor(textButton, position) {
@@ -14,7 +15,9 @@ class ListNavBoard {
 
     buttonAdd.addEventListener('click', () => {
       const newBoard = new NavBoard(textDefaultBoard, document.querySelector('.nav_boards'));
+      refInfo('boards', )
       newBoard.render();
+
     });
   }
 }

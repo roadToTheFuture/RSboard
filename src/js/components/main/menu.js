@@ -1,3 +1,6 @@
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
 function burgerLogic() {
   function menu() {
     const slide = document.querySelector('.nav');
@@ -39,7 +42,15 @@ function showDate() {
   setTimeout(showDate, 1000);
 }
 
+function getEmail() {
+  firebase.auth().onAuthStateChanged((user) =>{
+    const email = document.querySelector('.info__mail');
+    email.innerText = `${user.email}`;
+  })
+}
+
 export default function mainPageLogic(){
+  getEmail();
   burgerLogic();
   showTime();
   showDate();
