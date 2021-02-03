@@ -1,4 +1,15 @@
 import '@js';
 import '@/assets/scss/reset.scss';
 import './assets/mui/js/mui.min.js';
-import '@js/firebase/auth/initApp.js';
+import '@/assets/scss/ui.scss';
+import '@js/components/preloader/preloader.scss';
+import '@js/components/main/menu.scss';
+
+import '@js/components/board/wrapper/wrapper.scss';
+import '@js/components/board/wrapper/title.scss';
+import '@js/components/board/wrapper/content.scss';
+
+import '@js/components/authPage/authPage.scss';
+import '@js/components/authPage/animation.scss';
+import '@js/components/darkModeToggle/darkModeToggle.scss';
+import '@js/components/listBoard/listBoard.scss';

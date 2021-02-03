@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import errorLogic from '@js/authLogic/errorLogic.js';
 
 export default function handleSignUp() {
   const database = firebase.database();
@@ -8,11 +9,15 @@ export default function handleSignUp() {
   const email = document.getElementById('signUpEmail').value;
   const password = document.getElementById('signUpPassword').value;
   if (email.length < 4) {
-    alert('Please enter an email address.');
+    errorLogic('emailLength', 'Email must have more than 4 characters.    Please try again.', '.sign-up-form', true);
     return;
   }
   if (password.length < 4) {
-    alert('Please enter a password.');
+    errorLogic('length', 'Your password must contain more than 4 characters. Please try again.', '.sign-up-form', true);
+    return;
+  }
+  if(!userName){
+    errorLogic('noUser', 'Please enter a name and try again.', '.sign-up-form', true);
     return;
   }
   // Create user with email and pass.
@@ -26,17 +31,13 @@ export default function handleSignUp() {
         email: user.email,
         name: user.userName,
       });
-      console.log(user);
     })
     .catch((error) => {
-    // Handle Errors here.
       const errorCode = error.code;
-      const errorMessage = error.message;
-      if (errorCode == 'auth/weak-password') {
-        alert('The password is too weak.');
+      if (errorCode === 'auth/weak-password') {
+        errorLogic('weak', 'The password is too weak. Please try again.', '.sign-up-form', true);
       } else {
-        alert(errorMessage);
+        errorLogic('other', 'The email address is badly formatted.', '.sign-up-form', true);
       }
-      console.log(error);
     });
 }
