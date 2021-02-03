@@ -1,27 +1,28 @@
 .nav_boards {
-  padding-top: 20px ;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  margin-top: 10px;
+  overflow-y: auto;
+  height: 400px;
 }
 .create_nav_board {
   background-color: #4786ff;
-  color:  white;
+  color: white;
   padding: 14px 14px;
-  font-size:  14px;
+  font-size: 14px;
   order: 1;
   box-shadow: 0px 4px 20px rgba(71, 134, 255, 0.5);
-  transition: all .3s;
+  transition: all 0.3s;
 }
-.create_nav_board:hover  {
+.create_nav_board:hover {
   box-shadow: 0px 4px 20px rgba(25, 26, 27, 0.5);
   cursor: pointer;
-  opacity: .7;
+  opacity: 0.7;
 }
 .nav_boards_input {
   width: 160px;
-  height: 50px;
   background: #ececff;
   border-radius: 2px;
   padding-left: 10px;

@@ -8,8 +8,8 @@ class NavBoard {
 
   render() {
     const navBoard = createDomElement('div', 'nav_boards_list', '', this.elem);
-    const textarea = createDomElement('input', 'nav_boards_input', '', navBoard);
-    textarea.placeholder = this.defaultText;
+    const textarea = createDomElement('p', 'nav_boards_input', 'Enter your title ...', navBoard, 'contenteditable', 'true');
+    // textarea.placeholder = this.defaultText;
     const buttonBoardDelete = createDomElement('i', 'far fa-trash-alt column__card__button', '', navBoard);
     buttonBoardDelete.addEventListener('click', () => {
       navBoard.remove();
