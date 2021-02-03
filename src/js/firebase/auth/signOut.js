@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import renderWithAuthCheck from '@js/authLogic/renderWithAuthCheck.js';
+import firstLoad from '@js/authLogic/renderWithAuthCheck.js';
 
 function userGoOut() {
   firebase.auth().signOut().then(() => {
@@ -13,7 +13,7 @@ function userGoOut() {
 export default function signOut() {
   async function out() {
     userGoOut();
-    renderWithAuthCheck();
+    firstLoad();
     window.location.href = '';
     console.log('asdasd');
   }

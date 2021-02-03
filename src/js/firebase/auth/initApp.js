@@ -3,6 +3,8 @@ import 'firebase/auth';
 import toggleSignIn from './signIn';
 import handleSignUp from './signUp';
 import sendPasswordReset from './resetPass';
+import googleUp from './services/googleUp';
+import githubUp from './services/githubUp';
 
 
 export default function initApp() {
@@ -33,4 +35,6 @@ export default function initApp() {
   document.getElementById('signUpBtn').addEventListener('click', handleSignUp, false);
   document.getElementById('signUpBtn').addEventListener('click', addUrl, false);
   document.getElementById('resetPass').addEventListener('click', sendPasswordReset, false);
+  document.getElementById('social-google').addEventListener('click', googleUp, false);
+  document.getElementById('social-github').addEventListener('click', githubUp, false);
 }

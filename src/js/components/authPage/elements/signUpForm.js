@@ -38,15 +38,16 @@ export default function addSignUpForm(signInUpForms) {
   signUpBtn.setAttribute('id', 'signUpBtn');
 
   const socialMedia = createDomElement('div', 'social-media', '', signUpForm);
-  const facebook = createDomElement('a', 'social-icon', '', socialMedia, 'href', '#');
+
+  const facebook = createDomElement('button', 'social-icon', '', socialMedia, 'id', 'social-facebook');
   createDomElement('i', 'fab fa-facebook-f', '', facebook);
 
-  const gitHub = createDomElement('a', 'social-icon', '', socialMedia, 'href', '#');
+  const gitHub = createDomElement('button', 'social-icon', '', socialMedia, 'id', 'social-github');
   createDomElement('i', 'fab fa-github', '', gitHub);
 
-  const google = createDomElement('a', 'social-icon', '', socialMedia, 'href', '#');
+  const google = createDomElement('button', 'social-icon', '', socialMedia, 'id', 'social-google');
   createDomElement('i', 'fab fa-google', '', google);
 
-  const linkedin = createDomElement('a', 'social-icon', '', socialMedia, 'href', '#');
+  const linkedin = createDomElement('button', 'social-icon', '', socialMedia, 'id', 'social-linkedin');
   createDomElement('i', 'fab fa-linkedin', '', linkedin);
 }
