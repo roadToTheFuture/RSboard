@@ -3,7 +3,6 @@ import state from '@js/components/board/state.js';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
-import refInfo from '@js/database/refInfo.js';
 
 class Card {
   constructor(defaultText, elem, state) {
@@ -31,8 +30,6 @@ class Card {
     card.addEventListener('dragstart', dragstart); 
     card.addEventListener('dragend', dragend); 
     textarea.addEventListener('blur', () =>{
-     const key = (((card.parentNode).parentNode).querySelector('.column__text')).textContent;
-     state[`${key}`].[`${textarea.value}`] = textarea.value;
      if (textarea.value === '') {
       card.id = this.defaultText;
      } else {
@@ -40,9 +37,6 @@ class Card {
      }
      textarea.readOnly = 'true';
      textarea.classList.add('column__card__textarea--hover');
-  
-     refInfo('cards' ,{title: textarea.value});
-
     });
 
     const buttonWrapper = createDomElement('div', 'column__card__button-wrapper', '', card);

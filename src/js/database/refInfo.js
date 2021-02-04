@@ -4,6 +4,6 @@ import 'firebase/database';
 
 export default function refInfo(path, object) {
   firebase.auth().onAuthStateChanged((user) => {
-    firebase.database().ref(`/users/${user.uid}/render/${path}`).push(object);
+    firebase.database().ref(`/users/${user.uid}/${path}`).push(object);
   });
 }
